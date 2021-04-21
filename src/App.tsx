@@ -1,24 +1,59 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import StatementList from "./StatementList";
+
+import type { StatementListType } from "./StatementList";
+
+const prosData: StatementListType = [
+  "Lorem Ipsum",
+  "Lorem Ipsum",
+  "Lorem Ipsum",
+  "Lorem Ipsum",
+];
+
+const consData: StatementListType = [
+  "Lorem Ipsum 1",
+  "Lorem Ipsum 2",
+  "Lorem Ipsum 3",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+  "Lorem Ipsum 4",
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header>
+        <h2>Should I eat at MCD</h2>
       </header>
+      <div className="content">
+        <div className="column">
+          <header>pros</header>
+          <StatementList list={prosData} />
+        </div>
+        <div className="column">
+          <header>cons</header>
+          <StatementList list={consData} />
+        </div>
+      </div>
     </div>
   );
 }
