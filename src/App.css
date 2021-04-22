@@ -29,15 +29,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   line-height: 2;
-}
-
-.statement > input {
-  border: none;
-  font-size: 1em;
-}
-
-.statement {
-  line-height: 2.4;
+  border-bottom: 2px solid gray;
 }
 
 .content .column {
@@ -54,12 +46,4 @@ body {
 
 .content .column:last-child {
   border-right: 0;
-}
-
-.list-wrapper {
-  overflow: auto;
-}
-
-.column header {
-  border-bottom: 1px solid gray;
 }

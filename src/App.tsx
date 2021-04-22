@@ -1,16 +1,16 @@
 import "./App.css";
-import StatementList from "./StatementList";
+import CircumstanceList from "./CircumstanceList";
 
-import type { StatementListType } from "./StatementList";
+import type { CircumstanceListType } from "./CircumstanceList";
 
-const prosData: StatementListType = [
+const prosData: CircumstanceListType = [
   "Lorem Ipsum",
   "Lorem Ipsum",
   "Lorem Ipsum",
   "Lorem Ipsum",
 ];
 
-const consData: StatementListType = [
+const consData: CircumstanceListType = [
   "Lorem Ipsum 1",
   "Lorem Ipsum 2",
   "Lorem Ipsum 3",
@@ -47,11 +47,11 @@ function App() {
       <div className="content">
         <div className="column">
           <header>pros</header>
-          <StatementList list={prosData} />
+          <CircumstanceList list={prosData} />
         </div>
         <div className="column">
           <header>cons</header>
-          <StatementList list={consData} />
+          <CircumstanceList list={consData} />
         </div>
       </div>
     </div>

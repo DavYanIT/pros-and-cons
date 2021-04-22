@@ -1,0 +1,12 @@
+.list-wrapper {
+  overflow: auto;
+}
+
+.circumstance > input {
+  border: none;
+  font-size: 1em;
+}
+
+.circumstance {
+  line-height: 2.4;
+}
