@@ -1,5 +1,5 @@
-import "./App.css";
 import CircumstanceList from "./CircumstanceList";
+import "./App.css";
 
 import type { CircumstanceListType } from "./CircumstanceList";
 

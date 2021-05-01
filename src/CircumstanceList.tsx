@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import "./CircumstanceList.css";
 
 export type CircumstanceType = string;
@@ -9,29 +9,29 @@ interface CircumstanceListProps {
   list: CircumstanceListType;
 }
 
-export default (props: CircumstanceListProps) => {
-  const [circumstances, setCircumstances] = useState<CircumstanceListType>(props.list);
+export default ({ list }: CircumstanceListProps) => {
+  const [circumstances, setCircumstances] = useState<CircumstanceListType>(
+    list
+  );
 
   const makeChangeHandler = (index: number) => (
-    nextValue: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setCircumstances((circumstances) => {
-      if (nextValue.target.value === "") {
-        return [...circumstances.slice(0, index), ...circumstances.slice(index + 1)];
-      }
-      circumstances[index] = nextValue.target.value;
-      return [...circumstances];
-    });
+    const clonedCircumstances = [...circumstances];
+    if (event.target.value === "") {
+      clonedCircumstances.splice(index, 1);
+    } else {
+      clonedCircumstances[index] = event.target.value;
+    }
+    setCircumstances(clonedCircumstances);
   };
-
-  const statemsToRender = useMemo(() => [...circumstances, ""], [circumstances]);
 
   return (
     <div className="list-wrapper">
       <ol>
-        {statemsToRender.map((pro, index) => (
+        {[...circumstances, ""].map((circumstance, index) => (
           <li key={index} className="circumstance">
-            <input value={pro} onChange={makeChangeHandler(index)} />
+            <input value={circumstance} onChange={makeChangeHandler(index)} />
           </li>
         ))}
       </ol>
